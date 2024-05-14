@@ -6,13 +6,13 @@ import ViolationList from "./components/ViolationList.jsx";
 import React, { useState } from 'react';
 import { IdcardOutlined, SettingOutlined, FileProtectOutlined, AreaChartOutlined, ContainerOutlined, BookOutlined, ShopOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
-// import AppealCard from "./components/AppealCard.jsx";
+import AppealCard from "./components/AppealCard.jsx";
 import AppealList from "./components/AppealList.jsx";
 
 const components = {
     violations: <ViolationList />,
     appeals: <AppealList />,
-    construction_objects: <ConstructionObjectsList />
+    construction_objects: <ConstructionObjectsList />,
     appeal: <AppealCard />,
     defects: <DefectCard/>
 };
