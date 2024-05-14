@@ -1,48 +1,56 @@
-import { Card, Button, Input, DatePicker, Space, Row, Col, Select } from 'antd';
+import {Card, Button, Input, DatePicker, Space, Row, Select, Upload} from 'antd';
+import { UploadOutlined } from '@ant-design/icons';
 
 const { Option } = Select;
 
 function TaskInput() {
+
+    const uploadProps = {
+        name: 'file',
+        multiple: true,
+        action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76', // Пример действия загрузки на сервер (замените на свой URL)
+        onChange(info) {
+            if (info.file.status !== 'uploading') {
+                console.log(info.file, info.fileList);
+            }
+            if (info.file.status === 'done') {
+                console.log(`${info.file.name} file uploaded successfully`);
+            } else if (info.file.status === 'error') {
+                console.log(`${info.file.name} file upload failed.`);
+            }
+        },
+    };
+
     return (
-        <Card title="Ввод данных задачи" style={{ width: 600 }}>
-            <Space direction="vertical" size="large" style={{ width: '100%' }}>
-                <Input placeholder="Номер задачи" />
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
+            <Card title="Ввод данных задачи" style={{ width: 800 }}>
+                <Space direction="vertical" size="large" style={{ width: '100%' }}>
+                    <Input placeholder="Номер задачи" defaultValue="1"/>
 
-                <Input placeholder="Название задачи" />
+                    <Input placeholder="Название задачи" />
 
-                <Row gutter={16}>
-                    <Col span={12}>
-                        <DatePicker placeholder="Дата постановки" style={{ width: '100%' }} />
-                    </Col>
-                    <Col span={12}>
-                        <DatePicker placeholder="Дата завершения" style={{ width: '100%' }} />
-                    </Col>
-                </Row>
+                    <DatePicker placeholder="Крайний срок" style={{ width: '100%' }} />
 
-                <DatePicker placeholder="Крайний срок" style={{ width: '100%' }} />
+                    <Select placeholder="Исполнитель" style={{ width: '100%' }}>
+                        <Option value="Пользователь 1">Михайлов Михаил Михайлович</Option>
+                        <Option value="Пользователь 2">Леонидов Леонид Леонидович</Option>
+                    </Select>
 
-                <Select placeholder="Постановщик" style={{ width: '100%' }}>
-                    <Option value="Пользователь 1">Пользователь 1</Option>
-                    <Option value="Пользователь 2">Пользователь 2</Option>
-                    <Option value="Пользователь 3">Пользователь 3</Option>
-                </Select>
+                    <Input.TextArea placeholder="Описание" autoSize={{ minRows: 3, maxRows: 5 }} />
 
-                <Select placeholder="Исполнитель" style={{ width: '100%' }}>
-                    <Option value="Исполнитель 1">Исполнитель 1</Option>
-                    <Option value="Исполнитель 2">Исполнитель 2</Option>
-                    <Option value="Исполнитель 3">Исполнитель 3</Option>
-                </Select>
+                    <Upload {...uploadProps}>
+                        <Button icon={<UploadOutlined />}>Прикрепить файл</Button>
+                    </Upload>
 
-                <Input.TextArea placeholder="Описание" autoSize={{ minRows: 3, maxRows: 5 }} />
-
-                <Row justify="end">
-                    <Space>
-                        <Button danger>Отменить</Button>
-                        <Button type="primary">Сохранить</Button>
-                    </Space>
-                </Row>
-            </Space>
-        </Card>
+                    <Row justify="end">
+                        <Space>
+                            <Button danger>Отменить</Button>
+                            <Button type="primary">Сохранить</Button>
+                        </Space>
+                    </Row>
+                </Space>
+            </Card>
+        </div>
     );
 }
 
