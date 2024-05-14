@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Card, List, Button, Input, Cascader } from 'antd';
-import ViolationCard from './ViolationCard';
+import ViolationCard from './ViolationCard.jsx';
 
 function ViolationList() {
     const [selectedViolation, setSelectedViolation] = useState(null); // Состояние для хранения выбранного нарушения
