@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Card, List, Button, Input, Cascader } from 'antd';
-import ViolationCard from './ViolationCard.jsx';
+import AppealCard from "./AppealCard.jsx";
 
-function ViolationList() {
+function AppealList() {
     const [selectedViolation, setSelectedViolation] = useState(null); // Состояние для хранения выбранного нарушения
     const [filteredData, setFilteredData] = useState(null); // Состояние для хранения отфильтрованных данных
     const [statusFilter, setStatusFilter] = useState([]); // Состояние для хранения выбранных статусов фильтрации
@@ -10,48 +10,35 @@ function ViolationList() {
     const data = [
         {
             id: 1,
-            title: 'Title 1',
-            content: 'Барабашка',
+            title: 'Обращение № 5 от 29.02.2024',
+            category: 'Внтуренняя отделка',
+            owner: 'Иванов Иван Иванович',
+            status: 'Закрыто',
+            color: 'bg-green-50 text-green-800 ring-green-600/20',
+        },
+        {
+            id: 2,
+            title: 'Обращение № 6 от 06.03.2024',
+            category: 'Окна/Двери',
+            owner: 'Сидоров Сидр Сидорович',
             status: 'В работе',
             color: 'bg-yellow-50 text-yellow-800 ring-yellow-600/20',
         },
         {
-            id: 2,
-            title: 'Title 2',
-            content: 'Барабашка',
-            status: 'Создано',
-            color: 'bg-blue-50 text-blue-800 ring-blue-600/20',
-        },
-        {
             id: 3,
-            title: `Title 3`,
-            content: 'Барабашка',
-            status: 'Устранено',
+            title: `Обращение № 7 от 15.03.2024`,
+            category: 'Системы инженерно-технического обеспечения',
+            owner: 'Петров Пётр Петрович',
+            status: 'Закрыто',
             color: 'bg-green-50 text-green-800 ring-green-600/20',
         },
         {
             id: 4,
-            title: 'Title 4',
-            content: 'Барабашка',
-            status: 'Создано',
+            title: 'Обращение № 8 от 13.04.2024',
+            category: 'Окна/Двери',
+            owner: 'Королев Сергей Павлович',
+            status: 'Не обработано',
             color: 'bg-blue-50 text-blue-800 ring-blue-600/20',
-        },
-        {
-            id: 5,
-            title: '№ 123 от 13.04.2024 "Складирование материалов, мусор"',
-            content: 'Складирование опалубки, поддонов и других материалов – навалом, нет проходов к зданию,\n' +
-                '                                мусор не вывозится.\n' +
-                '                                В ИТП, лифтовых шахтах постоянно стоит вода.\n' +
-                '                                Имеются провалы грунта у ростверков.',
-            status: 'В работе',
-            color: 'bg-yellow-50 text-yellow-800 ring-yellow-600/20',
-        },
-        {
-            id: 6,
-            title: 'Title 6',
-            content: 'Барабашка',
-            status: 'Устранено',
-            color: 'bg-green-50 text-green-800 ring-green-600/20',
         },
     ];
 
@@ -83,15 +70,15 @@ function ViolationList() {
         <div className="mt-8 mx-4">
 
             {selectedViolation ? (
-                <ViolationCard violationId={selectedViolation}/>
+                <AppealCard violationId={selectedViolation}/>
             ) : (
                 <>
                     <div className="flex justify-between items-center mb-4">
                         <Cascader
                             options={[
-                                {label: 'Создано', value: 'Создано'},
+                                {label: 'Не обработано', value: 'Не обработано'},
                                 {label: 'В работе', value: 'В работе'},
-                                {label: 'Устранено', value: 'Устранено'},
+                                {label: 'Закрыто', value: 'Закрыто'},
                             ]}
                             onChange={handleStatusFilterChange}
                             placeholder="Фильтр по статусу"
@@ -124,7 +111,17 @@ function ViolationList() {
                                     {item.status}
                                 </span>}
                                     className="w-full">
-                                    <div className="text-left">{item.content}</div>
+                                    <div className="px-2 py-2 sm:grid sm:grid-cols-4 sm:gap-4 sm:px-0">
+                                        <dt className="text-sm font-medium leading-6 text-gray-900">Категория обращения:
+                                        </dt>
+                                        <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{item.category}</dd>
+                                    </div>
+                                    <div className="px-2 py-2 sm:grid sm:grid-cols-4 sm:gap-4 sm:px-0">
+                                        <dt className="text-sm font-medium leading-6 text-gray-900">Собственник квартиры:
+                                        </dt>
+                                        <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{item.owner}</dd>
+                                    </div>
+                                    {/*<div className="text-left">{item.content}</div>*/}
                                     <div className="flex justify-end mt-4">
                                         <Button type="primary"
                                                 onClick={() => handleViolationClick(item.id)}>Открыть</Button>
@@ -139,4 +136,4 @@ function ViolationList() {
     )
 }
 
-export default ViolationList
+export default AppealList

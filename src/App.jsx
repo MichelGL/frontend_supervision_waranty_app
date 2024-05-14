@@ -1,19 +1,28 @@
+
+import ConstructionObjectsList from "./components/ConstructionObjectsList.jsx";
 import DefectCard from "./components/DefectCard.jsx";
 import ViolationList from "./components/ViolationList.jsx";
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
-import { IdcardOutlined, SettingOutlined, FileProtectOutlined, AreaChartOutlined, ContainerOutlined, BookOutlined} from '@ant-design/icons';
+import { IdcardOutlined, SettingOutlined, FileProtectOutlined, AreaChartOutlined, ContainerOutlined, BookOutlined, ShopOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
-import AppealCard from "./components/AppealCard.jsx";
+// import AppealCard from "./components/AppealCard.jsx";
+import AppealList from "./components/AppealList.jsx";
 
 const components = {
     violations: <ViolationList />,
-    appeals: <AppealCard />,
+    appeals: <AppealList />,
+    construction_objects: <ConstructionObjectsList />
+    appeal: <AppealCard />,
     defects: <DefectCard/>
-    // другие компоненты...
 };
 
 const items = [
+    {
+        label: 'Объекты строительства',
+        key: 'construction_objects',
+        icon: <ShopOutlined />,
+    },
     {
         label: 'Нарушения',
         key: 'violations',
@@ -72,7 +81,7 @@ const items = [
     },
 ];
 const App = () => {
-    const [current, setCurrent] = useState('violations');
+    const [current, setCurrent] = useState('construction_objects');
 
     const onClick = (e) => {
         console.log('click ', e);
