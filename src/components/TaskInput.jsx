@@ -37,7 +37,7 @@ function TaskInput() {
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
                     <Card title="Ввод данных задачи" style={{ width: 800 }}>
                         <Space direction="vertical" size="large" style={{ width: '100%' }}>
-                            <Input placeholder="Номер задачи" defaultValue="1"/>
+                            <Input placeholder="Номер задачи" defaultValue="2"/>
 
                             <Input placeholder="Название задачи"/>
 

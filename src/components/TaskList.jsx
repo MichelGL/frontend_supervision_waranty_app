@@ -9,19 +9,19 @@ function TaskList() {
     const data = [
         {
             id: 1,
-            title: 'Задача № 1 от 15.04.2024',
-            contractor: 'Михайлов Михаил Михайлович',
-            deadline: '07.05.2024',
-            status: 'Ожидает исполнения',
-            color: 'bg-yellow-50 text-yellow-800 ring-yellow-600/20',
-        },
-        {
-            id: 2,
-            title: 'Задача № 2 от 11.04.2024',
+            title: 'Задача № 1 от 13.04.2024',
             contractor: 'Леонидов Леонид Леонидович',
             deadline: '06.05.2024',
             status: 'В работе',
             color: 'bg-green-50 text-green-800 ring-green-600/20',
+        },
+        {
+            id: 1,
+            title: 'Задача № 2 от 18.04.2024',
+            contractor: 'Михайлов Михаил Михайлович',
+            deadline: '07.05.2024',
+            status: 'Создана',
+            color: 'bg-blue-50 text-blue-800 ring-blue-600/20',
         },
     ];
 
@@ -48,7 +48,7 @@ function TaskList() {
             <div className="flex justify-between items-center mb-4">
                 <Cascader
                     options={[
-                        {label: 'Ожидает исполнения', value: 'Ожидает исполнения'},
+                        {label: 'Создана', value: 'Создана'},
                         {label: 'В работе', value: 'В работе'},
                     ]}
                     onChange={handleStatusFilterChange}
