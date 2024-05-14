@@ -23,7 +23,6 @@ function ViolationCard() {
         <Card
             title={
                 <div className="flex items-center gap-3">
-                    <img src="/Status_AtWork_icon.png" alt="Иконка статуса в работе"/>
                     <p className="text-2xl">{`№${violationId} от ${violationDate} "${violationName}"`}</p>
                 </div>
             }
