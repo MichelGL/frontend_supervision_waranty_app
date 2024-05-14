@@ -16,7 +16,7 @@ function AppealCard() {
     const constructionObjectName = "ЖК Дальше";
     const constructionObjectAddress = "ул. Ленина, 1";
     const location = "Подъезд 1, этаж 4, кв. 23";
-    const appealType = "Внутренняя отделка";
+    const appealType = "Окна/Двери";
     const description = "У меня в первый же месяц отпала петля на двери! там не было трех болтов из 4!! В результате дверь сломана прямо пополам и царапина на окне";
 
     return (
@@ -60,7 +60,7 @@ function AppealCard() {
                             <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{appealType}</dd>
                         </div>
                         <div className="px-2 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt className="text-sm font-medium leading-6 text-gray-900">Собственик квартиры
+                            <dt className="text-sm font-medium leading-6 text-gray-900">Собственник квартиры
                             </dt>
                             <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{personName}</dd>
                         </div>
