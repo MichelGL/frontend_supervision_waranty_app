@@ -1,20 +1,24 @@
-import ViolationCard from "./components/ViolationCard.jsx";
+// import ViolationCard from "./components/ViolationCard.jsx";
+import ViolationList from "./components/ViolationList.jsx";
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import { IdcardOutlined, SettingOutlined, FileProtectOutlined, AreaChartOutlined, ContainerOutlined, BookOutlined} from '@ant-design/icons';
 import { Menu } from 'antd';
 
+const components = {
+    violations: <ViolationList />,
+    // другие компоненты...
+};
 
 const items = [
     {
         label: 'Нарушения',
-        key: 'violation',
+        key: 'violations',
         icon: <FileProtectOutlined />,
-        component: <ViolationCard />,
     },
     {
         label: 'Обращения',
-        key: 'appeal',
+        key: 'appeals',
         icon: <IdcardOutlined />,
     },
     {
@@ -65,19 +69,16 @@ const items = [
     },
 ];
 const App = () => {
-    const [current, setCurrent] = useState('violation');
-    const [selectedComponent, setSelectedComponent] = useState(items.find(item => item.key === 'violation').component);
+    const [current, setCurrent] = useState('violations');
 
     const onClick = (e) => {
         console.log('click ', e);
         setCurrent(e.key);
-        const selectedItem = items.find(item => item.key === e.key);
-        setSelectedComponent(selectedItem.component);
     };
     return (
         <>
-            <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />;
-            {selectedComponent}
+            <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
+            {components[current]}
         </>
     )
 };
