@@ -27,11 +27,11 @@ const items = [
         key: 'construction_objects',
         icon: <ShopOutlined />,
     },
-    {
-        label: 'Нарушения',
-        key: 'violations',
-        icon: <FileProtectOutlined />,
-    },
+    // {
+    //     label: 'Нарушения',
+    //     key: 'violations',
+    //     icon: <FileProtectOutlined />,
+    // },
     {
         label: 'Обращения',
         key: 'appeals',

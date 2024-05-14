@@ -10,7 +10,7 @@ function AppealList() {
     const data = [
         {
             id: 1,
-            title: 'Обращение № 5 от 29.02.2024',
+            title: 'Обращение № 7 от 29.02.2024',
             category: 'Внтуренняя отделка',
             owner: 'Иванов Иван Иванович',
             status: 'Закрыто',
@@ -18,15 +18,15 @@ function AppealList() {
         },
         {
             id: 2,
-            title: 'Обращение № 6 от 06.03.2024',
+            title: 'Обращение № 8 от 13.04.2024',
             category: 'Окна/Двери',
-            owner: 'Сидоров Сидр Сидорович',
+            owner: 'Королев Сергей Павлович',
             status: 'В работе',
             color: 'bg-yellow-50 text-yellow-800 ring-yellow-600/20',
         },
         {
             id: 3,
-            title: `Обращение № 7 от 15.03.2024`,
+            title: `Обращение № 9 от 15.04.2024`,
             category: 'Системы инженерно-технического обеспечения',
             owner: 'Петров Пётр Петрович',
             status: 'Закрыто',
@@ -34,9 +34,9 @@ function AppealList() {
         },
         {
             id: 4,
-            title: 'Обращение № 8 от 13.04.2024',
+            title: 'Обращение № 10 от 16.04.2024',
             category: 'Окна/Двери',
-            owner: 'Королев Сергей Павлович',
+            owner: ' Сидоров Сидр Сидорович',
             status: 'Не обработано',
             color: 'bg-blue-50 text-blue-800 ring-blue-600/20',
         },
@@ -68,7 +68,6 @@ function AppealList() {
 
     return (
         <div className="mt-8 mx-4">
-
             {selectedViolation ? (
                 <AppealCard violationId={selectedViolation}/>
             ) : (
