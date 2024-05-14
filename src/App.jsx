@@ -1,4 +1,4 @@
-// import ViolationCard from "./components/ViolationCard.jsx";
+import DefectCard from "./components/DefectCard.jsx";
 import ViolationList from "./components/ViolationList.jsx";
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
@@ -9,6 +9,7 @@ import AppealCard from "./components/AppealCard.jsx";
 const components = {
     violations: <ViolationList />,
     appeals: <AppealCard />,
+    defects: <DefectCard/>
     // другие компоненты...
 };
 
@@ -25,7 +26,7 @@ const items = [
     },
     {
         label: 'Дефекты',
-        key: 'defect',
+        key: 'defects',
         icon: <FileProtectOutlined />,
     },
     {
