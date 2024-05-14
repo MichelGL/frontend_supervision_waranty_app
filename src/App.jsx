@@ -4,9 +4,11 @@ import ViolationList from "./components/ViolationList.jsx";
 import React, { useState } from 'react';
 import { IdcardOutlined, SettingOutlined, FileProtectOutlined, AreaChartOutlined, ContainerOutlined, BookOutlined} from '@ant-design/icons';
 import { Menu } from 'antd';
+import AppealCard from "./components/AppealCard.jsx";
 
 const components = {
     violations: <ViolationList />,
+    appeals: <AppealCard />,
     // другие компоненты...
 };
 
