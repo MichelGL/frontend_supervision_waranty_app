@@ -9,6 +9,7 @@ import { Menu } from 'antd';
 import AppealCard from "./components/AppealCard.jsx";
 import AppealList from "./components/AppealList.jsx";
 import TaskInput from "./components/TaskInput.jsx";
+import TaskList from "./components/TaskList.jsx";
 
 const components = {
     violations: <ViolationList />,
@@ -17,6 +18,7 @@ const components = {
     appeal: <AppealCard />,
     defects: <DefectCard/>,
     task: <TaskInput/>,
+    tasks: <TaskList/>,
 };
 
 const items = [
@@ -42,7 +44,7 @@ const items = [
     },
     {
         label: 'Задачи',
-        key: 'task',
+        key: 'tasks',
         icon: <ContainerOutlined />,
     },
     {
