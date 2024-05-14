@@ -6,7 +6,7 @@ import React, {useState} from "react";
 import TaskInput from "./TaskInput.jsx";
 
 function ViolationCard() {
-    const violationId = "123"; // Пример номера нарушения
+    const violationId = "12"; // Пример номера нарушения
     const violationName = "Складирование материалов, мусор"; // Пример наименования нарушения
     const violationDate = "13.04.2024"; // Пример даты нарушения
     const plannedDate = "12.06.2024";
