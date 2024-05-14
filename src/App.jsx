@@ -8,13 +8,15 @@ import { IdcardOutlined, SettingOutlined, FileProtectOutlined, AreaChartOutlined
 import { Menu } from 'antd';
 import AppealCard from "./components/AppealCard.jsx";
 import AppealList from "./components/AppealList.jsx";
+import TaskInput from "./components/TaskInput.jsx";
 
 const components = {
     violations: <ViolationList />,
     appeals: <AppealList />,
     construction_objects: <ConstructionObjectsList />,
     appeal: <AppealCard />,
-    defects: <DefectCard/>
+    defects: <DefectCard/>,
+    task: <TaskInput/>,
 };
 
 const items = [
