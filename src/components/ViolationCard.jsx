@@ -13,7 +13,7 @@ function ViolationCard() {
     const actualDate = ""; // Для примера пока оставим пустую строку
     const contractorOrganization = "ООО ПостроимСами";
     const responsiblePerson = "Королев Сергей Павлович";
-    const violationType = "Условия хранения";
+    const violationType = "Строительные конструкции";
     const constructionObjectName = "ЖК Дальше";
     const constructionObjectAddress = "ул. Ленина, 1";
     const location = "в осях1-4/А-Б";

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { List, Button } from 'antd';
 // import ViolationList from "./ViolationList.jsx";
 import AppealList from "./AppealList.jsx";
+import ViolationList from "./ViolationList.jsx";
 
 // const [selectedObject, setSelectedObject] = useState(null);
 //
@@ -33,7 +34,7 @@ function ConstructionObjectsList(){
     return (
         <div className="mt-8 mx-4">
             {isViolationListVisible ? (
-                <AppealList />
+                <ViolationList />
             ) : (
             <List
                 bordered

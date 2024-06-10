@@ -19,7 +19,7 @@ function TaskList() {
             id: 1,
             title: 'Задача № 2 от 18.04.2024',
             contractor: 'Михайлов Михаил Михайлович',
-            deadline: '07.05.2024',
+            deadline: '11.06.2024',
             status: 'Создана',
             color: 'bg-blue-50 text-blue-800 ring-blue-600/20',
         },
